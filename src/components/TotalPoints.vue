@@ -1,5 +1,7 @@
 <template>
   <div>
+    <md-progress-spinner v-if="loading" :md-diameter="100" :md-stroke="10" md-mode="indeterminate"></md-progress-spinner>
+    <div v-else>
     <md-field>
       <label for="games">Games:</label>
       <md-input name="games" id="games" v-model="gamesLeft"/>
@@ -26,6 +28,7 @@
       </span>
     </div>
   </div>
+  </div>
 </template>
 
 <style>
@@ -46,9 +49,10 @@ export default {
   data() {
     return {
       kareem: 38387,
-      lebron: 31498,
-      gamesLeft: 280,
+      lebron: 31966,
+      gamesLeft: 285,
       error: null,
+      loading: true,
     };
   },
   computed: {
@@ -60,12 +64,14 @@ export default {
     },
   },
   mounted() {
+    this.loading = true
     axios.get('https://api.db94.io/lebron/points', {
       responseType: 'json',
       withCredentials: false,
     }).then((result) => {
       this.lebron = result.data.points;
       this.gamesLeft = result.data.gamesLeft + (3 * 82);
+      this.loading = false;
     }).catch((error) => {
       this.error = error;
     });
