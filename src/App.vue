@@ -28,10 +28,6 @@ export default {
     return {
       players: [
         {
-          name: 'Kobe',
-          total: 33643,
-        },
-        {
           name: 'Malone',
           total: 36928,
         },
