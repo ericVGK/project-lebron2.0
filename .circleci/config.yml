@@ -42,4 +42,4 @@ jobs:
       - run: ssh-keyscan -H home502473674.1and1-data.host >> ~/.ssh/known_hosts
       - run: ls ~/repo
       - run: ls ~/repo/dist
-      - run: rsync -avz -e "ssh" ~/repo/dist u75336870@home502473674.1and1-data.host:project-lebron/
+      - run: rsync -avz -e "ssh" ~/repo/dist/* u75336870@home502473674.1and1-data.host:project-lebron/
