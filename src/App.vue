@@ -36,9 +36,9 @@ export default {
           total: 38387,
         },
       ],
-      lebron: 32835,
-      gamesLeft: 234,
-      gamesPlayed: 1210,
+      lebron: 34087,
+      gamesLeft: 182,
+      gamesPlayed: 1258,
       error: null,
       loading: true,
     };
