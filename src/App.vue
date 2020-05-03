@@ -52,14 +52,16 @@ export default {
     },
   },
   mounted() {
-    this.loading = false;
+    this.loading = true;
     axios.get('https://api.db94.io/lebron/points', {
       responseType: 'json',
       withCredentials: false,
     }).then((result) => {
-      this.lebron = result.data.points;
-      this.gamesLeft = result.data.gamesLeft + (2 * 82);
-      this.gamesPlayed = result.data.gamesPlayed;
+      if (this.lebron < result.data.points) {
+        this.lebron = result.data.points;
+        this.gamesLeft = result.data.gamesLeft + (2 * 82);
+        this.gamesPlayed = result.data.gamesPlayed;
+      }
       this.loading = false;
     }).catch((error) => {
       this.error = error;
