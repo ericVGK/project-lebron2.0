@@ -6,7 +6,7 @@
     </md-card-header>
 
     <md-card-content>
-      {{gamesTill}} games
+      {{gamesTill}} career average games away
     </md-card-content>
   </md-card>
 </template>

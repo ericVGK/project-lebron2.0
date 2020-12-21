@@ -2,7 +2,7 @@
   <div id="app">
       <md-card class="md-layout-item md-size-75 md-small-size-100">
         <md-card-header>
-          <div class="md-title" id="page-title">Lebron All-Time Leader</div>
+          <div class="md-title" id="page-title">Lebron's Path To The All-Time Scoring Lead</div>
         </md-card-header>
 
         <md-card-content>
